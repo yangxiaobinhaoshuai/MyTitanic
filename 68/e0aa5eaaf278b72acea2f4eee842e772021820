@@ -1,0 +1,26 @@
+.gitignore
+  h_c17f9147a0a04a 1-12
+main.py
+  h_c17f9147a0a04a 1-17
+data/data_process.py
+  h_c17f9147a0a04a 1-59
+README.md
+  h_c17f9147a0a04a 1-11
+my_logger.py
+  h_c17f9147a0a04a 1-28
+model/my_model.py
+  h_c17f9147a0a04a 1-11
+train.py
+  h_c17f9147a0a04a 1-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.1",
+  "base_commit_sha": "68e0aa5eaaf278b72acea2f4eee842e772021820",
+  "prompts": {},
+  "humans": {
+    "h_c17f9147a0a04a": {
+      "author": "yangxiaobin01 <yangxiaobin01@zuoyebang.com>"
+    }
+  }
+}
