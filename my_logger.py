@@ -30,7 +30,7 @@ def setup_logger() -> None:
         show_path=True,
     )
     console_handler.setLevel(logging.INFO)
-    console_handler.setFormatter(logging.Formatter("%message"))
+    console_handler.setFormatter(logging.Formatter("%(message)s"))
 
     root_logger.addHandler(file_handler)
     root_logger.addHandler(console_handler)

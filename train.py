@@ -8,8 +8,9 @@ lr = 0.001
 
 
 def train():
-
+    
     pd_train, pd_validate, pd_test = get_dataset()
+
     logger.info(f"pd_train shape:{pd_train.shape}")
     logger.info(f"pd_test shape:{pd_test.shape}")
 
