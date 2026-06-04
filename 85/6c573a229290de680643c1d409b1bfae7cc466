@@ -1,0 +1,18 @@
+data/data_process.py
+  h_c17f9147a0a04a 6,12-14,16-17,19,21-47,49-50,53-57,72-98,100-105
+train.py
+  h_c17f9147a0a04a 11,13
+my_logger.py
+  h_c17f9147a0a04a 33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "856c573a229290de680643c1d409b1bfae7cc466",
+  "prompts": {},
+  "humans": {
+    "h_c17f9147a0a04a": {
+      "author": "yangxiaobin01 <yangxiaobin01@zuoyebang.com>"
+    }
+  }
+}
