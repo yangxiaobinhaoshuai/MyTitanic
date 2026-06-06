@@ -4,6 +4,7 @@ import pandas as pd
 from my_logger import logger
 from sklearn.model_selection import train_test_split
 
+
 # Download latest version
 path = kagglehub.competition_download("titanic")
 logger.info(f"Path to competition files: {path}")
@@ -100,9 +101,9 @@ def split_dataset(raw: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.Dat
 
 pd_train, pd_val, pd_test = split_dataset(raw=pd_raw)
 
-#  label
-pd_x_train = pd_train["Survived"]
-pd_y_train = pd_val["Survived"]
+#  labelv
+pd_y_train = pd_train["Survived"]
+pd_y_val = pd_val["Survived"]
 
 
 train_age_median = calculate_raw_median(pd_train, "Age")
@@ -113,11 +114,22 @@ processed_test = process_features(pd_test, train_age_median)
 
 # 缺的列补 0， 多余的丢掉
 processed_val = processed_val.reindex(columns=processed_train.columns, fill_value=0)
-processed_test = processed_train.reindex(columns=processed_train.columns, fill_value=0)
+processed_test = processed_test.reindex(columns=processed_train.columns, fill_value=0)
 
 preview_processed_dataset(processed_train)
 preview_processed_dataset(processed_val)
 preview_processed_dataset(processed_test)
+
+
+pd_x_train = processed_train
+pd_x_val = processed_val
+pd_x_test = processed_test
+
+
+def get_processed_data() -> tuple[
+    pd.DataFrame, pd.Series, pd.DataFrame, pd.Series, pd.DataFrame
+]:
+    return pd_x_train, pd_y_train, pd_x_val, pd_y_val, pd_x_test
 
 
 # TODO
