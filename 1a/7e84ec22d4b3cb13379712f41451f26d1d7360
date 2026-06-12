@@ -1,0 +1,14 @@
+train.py
+  h_c17f9147a0a04a 4,7,24-28,30-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "1a7e84ec22d4b3cb13379712f41451f26d1d7360",
+  "prompts": {},
+  "humans": {
+    "h_c17f9147a0a04a": {
+      "author": "yangxiaobin01 <yangxiaobin01@zuoyebang.com>"
+    }
+  }
+}
