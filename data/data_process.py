@@ -111,6 +111,7 @@ train_age_median = calculate_raw_median(pd_train, "Age")
 processed_train = process_features(pd_train, train_age_median)
 processed_val = process_features(pd_val, train_age_median)
 processed_test = process_features(pd_test, train_age_median)
+test_passenger_id = pd_test["PassengerId"]
 
 # 缺的列补 0， 多余的丢掉
 processed_val = processed_val.reindex(columns=processed_train.columns, fill_value=0)
@@ -127,29 +128,6 @@ pd_x_test = processed_test
 
 
 def get_processed_data() -> tuple[
-    pd.DataFrame, pd.Series, pd.DataFrame, pd.Series, pd.DataFrame
+    pd.DataFrame, pd.Series, pd.DataFrame, pd.Series, pd.DataFrame, pd.Series
 ]:
-    return pd_x_train, pd_y_train, pd_x_val, pd_y_val, pd_x_test
-
-
-# TODO
-def write_sub_csv(map: dict[int, int], force: bool = False):
-
-    if not force:
-        out_file_name = "submission.csv"
-        cur = os.path.curdir
-        out_file = os.path.join(cur, out_file_name)
-
-        if out_file:
-            logger.info("submission file alread exit, skip override")
-            return
-
-    else:
-        logger.info(f"force override submission file, map len: ${len(map)}")
-        submissions = pd.DataFrame(
-            {
-                "PassengerId": map.keys,
-                "Survived": map.values,
-            }
-        )
-        submissions.to_csv("submission.csv", index=False)
+    return pd_x_train, pd_y_train, pd_x_val, pd_y_val, pd_x_test, test_passenger_id
